@@ -29,7 +29,6 @@ app.get('/', (req: Request, res: Response) => {
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
 app.use('/translate', translateRouter)
 
 app.use(middleware.errorHandler)

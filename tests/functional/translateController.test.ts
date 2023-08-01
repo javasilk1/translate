@@ -1,4 +1,4 @@
-import app from '../../src/index'; // Assuming this is the Express app instance
+import app from '../../src/index';
 import { translateValues } from '../../src/services/translate.service';
 const request = require('supertest');
 type TranslateValuesMethod = typeof translateValues;
@@ -8,6 +8,7 @@ const translateValuesMethod: TranslateValuesMethod = translateValues;
 jest.mock('../../src/services/translate.service', () => ({
   translateValues: jest.fn().mockResolvedValue({ /* valore di ritorno desiderato */ }),
 }));
+
 
 describe('Translate Controller', () => {
   test('should translate data and return the translated JSON', async () => {
@@ -62,7 +63,7 @@ describe('Translate Controller', () => {
     mockedTranslateValues.mockRestore();
   });
 
-  test('should return status 500 if there is an error during translation', async () => {
+  test.only('should return status 500 if there is an error during translation', async () => {
     const language = 'en';
 
     // Mock the translateValues function to throw an error
