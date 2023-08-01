@@ -5,10 +5,9 @@ import 'dotenv/config'
 
 import * as middleware from './middleware'
 
-import articlesRouter from './routers/articles.router'
 import translateRouter from './routers/translate.router'
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 4000
 const ENV = process.env.NODE_ENV || 'production'
 
 const app: Express = express()
@@ -31,17 +30,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-// Articles routes
-
-app.use('/articles', articlesRouter)
 app.use('/translate', translateRouter)
 
 app.use(middleware.errorHandler)
 
 app.use(middleware.notFoundHandler)
 
-const server = app.listen(4000, () => {
-  console.log(`Server running on port ${4000} in ${ENV} environment`)
+const server = app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} in ${ENV} environment`)
 })
 
 export { app as default, server }

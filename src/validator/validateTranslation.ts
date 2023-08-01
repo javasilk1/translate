@@ -8,7 +8,6 @@ const translationSchema = Joi.object({
 });
 
 export const validateTranslation = (req: Request, res: Response, next: NextFunction) =>{
-  console.log(req.body)
   const { error } = translationSchema.validate(req.body);
 
   if (error) {
