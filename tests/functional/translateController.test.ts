@@ -63,7 +63,7 @@ describe('Translate Controller', () => {
     mockedTranslateValues.mockRestore();
   });
 
-  test.only('should return status 500 if there is an error during translation', async () => {
+  test('should return status 500 if there is an error during translation', async () => {
     const language = 'en';
 
     // Mock the translateValues function to throw an error
