@@ -1,50 +1,44 @@
-## Project structure
-```
-node-express-typescript-starter
-├─ .editorconfig
-├─ .eslintrc.json
-├─ .github
-│  └─ workflows
-│     └─ build-test.yml
-├─ .gitignore
-├─ .nvmrc
-├─ CODE_OF_CONDUCT.md
-├─ CONTRIBUTING.md
-├─ Dockerfile
-├─ LICENSE
-├─ README.md
-├─ error.log
-├─ jest.config.ts
-├─ package-lock.json
-├─ package.json
-├─ src
-│  ├─ common
-│  │  ├─ http-exception.ts
-│  │  └─ logger.ts
-│  ├─ controllers
-│  │  └─ articles.controller.ts
-│  ├─ index.ts
-│  ├─ middleware
-│  │  ├─ error.middleware.ts
-│  │  ├─ http-logger.middleware.ts
-│  │  ├─ index.ts
-│  │  └─ not-found.middleware.ts
-│  ├─ routers
-│  │  └─ articles.router.ts
-│  └─ services
-│     └─ articles.service.ts
-├─ tests
-│  └─ articles.test.ts
-├─ tsconfig.json
-└─ types
-   ├─ articles.d.ts
-   └─ service-response.d.ts
+[![Build - Tests](https://github.com/elgharabawy/node-express-typescript-starter/actions/workflows/build-test.yml/badge.svg)](https://github.com/elgharabawy/node-express-typescript-starter/actions/workflows/build-test.yml)
+# Translate api Project
 
+This project is a simple translation tool built with Node.js and Express.js. It allows you to translate JSON objects with multilevel depth containing strings to a desired language using the Google Translate API.
+
+## Prerequisite
+- Node 16
+## Nice to have
+- [NVM](https://github.com/nvm-sh/nvm)
+- [VS Code](https://code.visualstudio.com/)
+- [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+## Getting started
+- Clone the repository
 ```
-## General notes
-- This is meant to be a starter project. Feel free to remove the articles routes and add your own resources
-- ESLint is run as part of the build command 
-- This project could be deployed to Google Cloud using [gcloud CLI](https://cloud.google.com/sdk/docs/install) without any modifications
+git clone --depth=1 https://github.com/elgharabawy/node-express-typescript-starter.git <project_name>
 ```
-gcloud run deploy
+- Install dependencies
 ```
+cd <project_name>
+npm install
+```
+- Run local development server
+```
+npm run dev
+```
+- Using postman, curl, or your browser
+```
+GET http://localhost:4000
+GET http://localhost:4000/translate
+```
+- To use ESLint
+```
+npm run lint
+```
+- To run tests
+```
+npm test
+```
+Remeber: it's not a good idea to push .env files to your repo!
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+## License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.
