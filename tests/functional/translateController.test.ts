@@ -1,10 +1,8 @@
 import app from '../../src/index';
 import { translateValues } from '../../src/services/translate.service';
 const request = require('supertest');
-type TranslateValuesMethod = typeof translateValues;
 
 // Otteniamo il tipo del metodo
-const translateValuesMethod: TranslateValuesMethod = translateValues;
 jest.mock('../../src/services/translate.service', () => ({
   translateValues: jest.fn().mockResolvedValue({ /* valore di ritorno desiderato */ }),
 }));
